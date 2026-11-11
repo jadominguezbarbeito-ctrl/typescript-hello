@@ -1,12 +1,15 @@
-if (typeof document !== "undefined") {
-  import("./style.css").then(() => {
-    const app = document.querySelector<HTMLParagraphElement>("#app");
-    if (app) {
-      app.textContent = "If you can see this, Tailwind is working.";
-    }
-  });
-}
+// Crea la sala con el número de filas y columnas indicado
+function inicializarSala(filas: number, columnas: number): number[][] {
+   const sala: number [] [] = [];
+   for (let f = 0; f < filas; f++) {
+      const fila: number [] = [];
+      for (let c = 0; c < columnas; c++) {
+         fila.push(0);
+      } // cierra el for de asientos
+      sala.push(fila);
+   } // cierra el for de filas
+   return sala;
+} // cierra la función
 
-console.log("Hello from src/main.ts");
-
-export {};
+const sala = inicializarSala(8, 10);
+console.log(sala);
