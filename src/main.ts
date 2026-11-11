@@ -14,5 +14,20 @@ function inicializarSala(filas: number, columnas: number): number[][] {
    return sala;
 } // cierra la función
 
+// Muestra la sala con L, X y con el número de cada fila
+function mostrarSala(sala: number [] []): void {
+   for (let f = 0; f < sala.length; f++) {
+      let linea = `${f} ` ; // empieza con el número de fila
+      for (const asiento of sala [f]) {
+         if (asiento === ocupado) {
+            linea += "X ";
+         } else {
+            linea += "L ";
+         }
+      }
+      console.log(linea);
+   }
+}
 const sala = inicializarSala(8, 10);
-console.log(sala);
+sala [5] [2] = ocupado;
+mostrarSala(sala);
