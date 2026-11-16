@@ -1,3 +1,4 @@
+// 0 Significa que el asiento está libre y 1 ocupado
 const libre = 0;
 const ocupado = 1;
 
@@ -14,8 +15,14 @@ function inicializarSala(filas: number, columnas: number): number[][] {
    return sala;
 } // cierra la función
 
-// Muestra la sala con L, X y con el número de cada fila
+// Muestra la sala con L, X y con el número de cada fila y columna
 function mostrarSala(sala: number [] []): void {
+   let cabecera = "  ";
+   for (let ca = 0; ca < sala[0].length; ca++) {
+      cabecera += `${ca} `
+   }
+   console.log(cabecera)
+
    for (let f = 0; f < sala.length; f++) {
       let linea = `${f} ` ; // empieza con el número de fila
       for (const asiento of sala [f]) {
