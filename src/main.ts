@@ -35,6 +35,24 @@ function mostrarSala(sala: number [] []): void {
       console.log(linea);
    }
 }
+// Reservar asiento y marcarlo como ocupado
+function reservarAsiento(sala: number [] [], fila: number, columna: number): string {
+   if (fila < 0 || fila >= sala.length) {
+      return `La fila no es correcta`
+   }  else if (columna < 0 || columna >= sala[0].length) {
+      return `La columna no es correcta`
+   }  else if (sala [fila] [columna] === ocupado) {
+      return `Seleccione un asiento libre`
+   }  else {
+      sala [fila] [columna] = ocupado;
+      return `Reserva efectuada con exito` 
+   }
+}
 const sala = inicializarSala(8, 10);
-sala [5] [2] = ocupado;
+console.log(reservarAsiento(sala, 5, 2))
+console.log(reservarAsiento(sala, 5, 2))
+console.log(reservarAsiento(sala, 12, 5))
+console.log(reservarAsiento(sala, 2, 15))
 mostrarSala(sala);
+
+
