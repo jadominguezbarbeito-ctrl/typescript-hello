@@ -49,10 +49,27 @@ function reservarAsiento(sala: number [] [], fila: number, columna: number): str
    }
 }
 const sala = inicializarSala(8, 10);
-console.log(reservarAsiento(sala, 5, 2))
-console.log(reservarAsiento(sala, 5, 2))
-console.log(reservarAsiento(sala, 12, 5))
-console.log(reservarAsiento(sala, 2, 15))
+console.log(reservarAsiento(sala, 5, 2));
+console.log(reservarAsiento(sala, 5, 2));
+console.log(reservarAsiento(sala, 12, 5));
+console.log(reservarAsiento(sala, 2, 15));
 mostrarSala(sala);
 
 
+// Cuenta los asientos libres y ocupados de la sala
+function contarAsientos(sala:number [][]): string {
+   let libres = 0;
+   let ocupados = 0;
+   for (let f = 0; f < sala.length; f++) {
+      for (const asiento of sala [f]) {
+         if (asiento === ocupado) {
+            ocupados += 1;
+         } else {
+            libres += 1;
+         }
+      }
+   }  
+   return `Asientos ocupados ${ocupados} y asientos libres ${libres}` 
+}
+
+console.log(contarAsientos(sala));
