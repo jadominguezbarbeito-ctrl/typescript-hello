@@ -73,3 +73,17 @@ function contarAsientos(sala:number [][]): string {
 }
 
 console.log(contarAsientos(sala));
+
+// Buscar asientos libres contiguos 
+function buscarAsientosContiguos (sala: number [] []): string {
+   for (let f = 0; f < sala.length; f++) {
+      for (let c = 0; c < sala[0].length - 1; c++) {
+         if (sala [f] [c] === libre && sala [f] [c + 1] === libre) {
+            return `Asientos contiguos libres en fila ${f} columnas ${c} y ${c + 1}`
+         }
+      }
+   }
+   return `No hay asientos libres contiguos`
+}
+
+console.log(buscarAsientosContiguos(sala));
